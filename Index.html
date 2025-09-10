@@ -291,6 +291,425 @@
             #contact h2 {
                 font-size: 2rem;
             }
+
+        }
+        /* Header & Nav */
+header {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    box-shadow: 0 6px 12px rgba(11, 34, 70, 0.6);
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: flex-end; /* Align the nav items to the right */
+}
+
+nav a {
+    font-weight: 600;
+    margin-right: 35px;
+    font-size: 1.1rem;
+    padding-bottom: 3px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #f0a500;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #f0a500;
+    border-radius: 3px;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="active" onclick="switchTab(event, 'home')">Home</a>
+            <a href="#about" onclick="switchTab(event, 'about')">About</a>
+            <a href="#divisions" onclick="switchTab(event, 'divisions')">Resources</a>
+            <a href="#contact" onclick="switchTab(event, 'contact')">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="active" aria-label="Home section">
+            <h1>Welcome Learner To Explore and Learn</h1>
+            <p>Learn the Growing Tech in the Simplest Ways Possible.</p>
+            <blockquote>
+                “Technology is best when it brings people together.” – Matt Mullenweg
+            </blockquote>
+        </section>
+
+        <section id="about" aria-label="About section">
+            <h2>About Tech Trekker</h2>
+            <p>Technology is transforming the world at an unprecedented pace. From artificial intelligence to aerospace,
+                every innovation
+                pushes boundaries and creates new opportunities for learners and creators alike. Embracing modern tech education
+                empowers
+                individuals to shape the future.</p>
+            <blockquote>
+                “The science of today is the technology of tomorrow.” – Edward Teller
+            </blockquote>
+            <p>Our mission is to simplify tech learning by providing approachable resources, live guidance, and a community
+                that nurtures curiosity
+                and creativity in the digital era.</p>
+        </section>
+
+        <section id="divisions" aria-label="Resources section">
+            <h2>Resources</h2>
+            <div class="division-card">
+                <h3>CodeChakra</h3>
+                <p>A vibrant division dedicated to coding competitions, workshops, and coding mentorship to grow tech skills
+                    in students.</p>
+            </div>
+            <div class="division-card">
+                <h3>Notes and Study Material</h3>
+                <p>Comprehensive notes and study materials carefully crafted to enhance learning and assist students at all
+                    levels.</p>
+            </div>
+            <div class="division-card">
+                <h3>Live Sessions</h3>
+                <p>Interactive live sessions with experts covering trending topics in technology, hands-on workshops, and Q&A to
+                    deepen understanding.</p>
+            </div>
+        </section>
+
+        <section id="contact" aria-label="Contact section">
+            <h2>Contact Us</h2>
+            <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will respond soon.');">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="off" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="off" required />
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function switchTab(event, tabId) {
+            event.preventDefault();
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            sections.forEach(section => section.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tech Trekker - TechWines Replica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #121214;
+            color: #eee;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Header & Nav */
+        header {
+            background: linear-gradient(90deg, #4b6cb7, #182848);
+            box-shadow: 0 6px 12px rgba(11, 34, 70, 0.6);
+            padding: 15px 30px;
+        }
+
+        nav {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            justify-content: flex-start;
+        }
+
+        nav a {
+            font-weight: 600;
+            margin-right: 35px;
+            font-size: 1.1rem;
+            padding-bottom: 3px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #f0a500;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: #f0a500;
+            border-radius: 3px;
+        }
+
+        /* Main Container */
+        main {
+            flex-grow: 1;
+            background: #1e1e2f;
+            max-width: 1100px;
+            margin: 40px auto;
+            border-radius: 15px;
+            padding: 40px 50px;
+            box-shadow: 0 0 40px -10px #f0a500aa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sections */
+        section {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+            pointer-events: auto;
+        }
+
+        /* Home Section */
+        #home {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            color: #f0a500;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            color: #ddd;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        #about h2 {
+            font-size: 2.8rem;
+            color: #f0a500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            border-bottom: 3px solid #f0a500;
+            padding-bottom: 8px;
+            max-width: 300px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #ccc;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #ffdb4d;
+            border-left: 5px solid #ffdb4d;
+            padding-left: 15px;
+            margin: 25px auto;
+            max-width: 650px;
+        }
+
+        /* Divisions Section renamed to Resources */
+        #divisions h2 {
+            font-size: 2.8rem;
+            color: #f0a500;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #f0a500;
+            padding-bottom: 8px;
+            max-width: 300px;
+        }
+
+        .division-card {
+            background: #292a3d;
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 4px 4px 10px #000000aa;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .division-card:hover {
+            box-shadow: 0 0 25px 4px #f0a500dd;
+        }
+
+        .division-card h3 {
+            margin-bottom: 12px;
+            color: #f0a500;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            font-size: 1.7rem;
+        }
+
+        .division-card p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Contact Section */
+        #contact h2 {
+            font-size: 2.8rem;
+            color: #f0a500;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #f0a500;
+            padding-bottom: 8px;
+            max-width: 300px;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #f0a500;
+            letter-spacing: 0.04em;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 18px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: #292a3d;
+            color: #eee;
+            box-shadow: inset 2px 2px 8px #1a1a2e, inset -2px -2px 8px #3d3d5a;
+            transition: box-shadow 0.3s ease;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 14px 2px #f0a500;
+            background: #3b3b61;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background: #f0a500;
+            color: #121214;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 15px 0;
+            width: 100%;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background: #d18e00;
+            box-shadow: 0 0 30px #d18e00aa;
+            transform: scale(1.05);
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.95);
+            box-shadow: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            main {
+                margin: 30px 15px;
+                padding: 30px 20px;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                margin-right: 15px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            #home p,
+            #about p,
+            .division-card p {
+                font-size: 1rem;
+            }
+
+            #about h2,
+            #divisions h2,
+            #contact h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -377,4 +796,5 @@
 </body>
 
 </html>
+
 
