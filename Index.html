@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html>
-    <title>TechTrekker</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Trekker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #333; color: #fff; padding: 20px 0; text-align: center; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 30px auto; background: #fff; padding: 30px; box-shadow: 0 2px 8px #aaa; }
+        .hero { text-align: center; padding: 40px 20px; background: #e7e7e7; border-radius: 5px; }
+        .hero h1 { margin: 0 0 10px 0; }
+        section { margin: 40px 0; }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 10px; }
+        input, textarea { padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 3px; }
+        button { width: 120px; margin-top: 15px; padding: 10px; background: #333; color: #fff; border: none; border-radius: 3px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #444; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            .hero { padding: 20px 5px; }
+        }
+    </style>
+</head>
 <body>
-<h1>Welcome Learner !!</h1>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="hero" id="home">
+            <h1>Welcome Learner To Explore and Learn</h1>
+            <p>A simple, stylish template for your project!</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>Here you meet the new wave of Technology.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Unknown devs</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
 </body>
-
-
-
-
 </html>
